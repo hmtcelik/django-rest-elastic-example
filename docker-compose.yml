@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.18
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+
+  api:
+    build: .
+    container_name: rest_api
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - elasticsearch
