@@ -18,14 +18,21 @@ SECRET_KEY=your_secret_key
 ```bash
 docker-compose up --build
 ```
+
 before continue, wait for everything ready (the elasticsearch wake up may tooks a few seconds)
 
-### 2. Create the indexes:
+### 2. Create the indexes and a user:
 
-(Not required for tests)
+> This part is not required for tests
 
 ```bash
 docker-compose exec api python manage.py create_indexes
+```
+
+you will also want to create a user to use the API:
+
+```bash
+docker-compose exec api python manage.py createsuperuser
 ```
 
 ### 3. Search in Elasticsearch via "management command" or endpoint:
