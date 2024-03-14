@@ -34,7 +34,9 @@ class Command(BaseCommand):
         )
         if "access" not in auth_response.json():
             return self.stdout.write(
-                self.style.ERROR("Failed to authenticate with the API")
+                self.style.ERROR(
+                    "Failed the Authentication, No active account found with the given credentials"
+                )
             )
         token = auth_response.json()["access"]
 
