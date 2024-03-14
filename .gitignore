@@ -1,3 +1,7 @@
+# ignore static files generating from django
+static/*
+!static/.keep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
