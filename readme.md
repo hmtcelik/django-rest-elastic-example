@@ -6,7 +6,7 @@ This is a simple example of how to use Django REST and Elasticsearch to search f
 
 ### Prerequisites:
 
-> Don't forget to create a `.env` file with the following variables:
+Don't forget to create a `.env` file with the following variables:
 
 ```bash
 # .env
@@ -18,6 +18,7 @@ SECRET_KEY=your_secret_key
 ```bash
 docker-compose up --build
 ```
+before continue, wait for everything ready (the elasticsearch wake up may tooks a few seconds)
 
 ### 2. Create the indexes:
 
