@@ -23,8 +23,6 @@ before continue, wait for everything ready (the elasticsearch wake up may tooks 
 
 ### 2. Create the indexes and a user:
 
-> This part is not required for tests
-
 ```bash
 docker-compose exec api python manage.py create_indexes
 ```
@@ -53,7 +51,11 @@ curl --request POST \
 }'
 ```
 
-### 4. (OPTIONAL) Run the tests:
+### (OPTIONAL) Run the tests:
+
+You can directly run the tests after the containers are up (Step 1)
+
+> the others steps are not necessary to run the tests. They are already mocked.
 
 ```bash
 docker-compose exec api python manage.py test
